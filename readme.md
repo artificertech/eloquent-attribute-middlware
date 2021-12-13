@@ -311,6 +311,6 @@ MIT. Please see the [license file](license.md) for more information.
 [link-packagist]: https://packagist.org/packages/artificertech/eloquent-attribute-middleware
 [link-downloads]: https://packagist.org/packages/artificertech/eloquent-attribute-middleware
 [link-travis]: https://travis-ci.org/artificertech/eloquent-attribute-middleware
-[link-styleci]: https://styleci.io/repos/12345678
+[link-styleci]: https://styleci.io/repos/437927180
 [link-author]: https://github.com/coleshirley
 [link-contributors]: ../../contributors
