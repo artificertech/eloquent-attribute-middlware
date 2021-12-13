@@ -10,7 +10,7 @@ use Closure;
 class AppendTestString extends Mutator
 {
     /**
-     * Run the mutator on the specified model attribute value
+     * Run the mutator on the specified model attribute value.
      *
      * @return mixed
      */
