@@ -1,0 +1,20 @@
+<?php
+
+namespace {{ namespace }};
+
+use Artificertech\EloquentAttributeMiddleware\Accessors\Accessor;
+use Attribute;
+use Closure;
+
+#[Attribute(Attribute::TARGET_METHOD)]
+class {{ class }} extends Accessor
+{
+    /**
+     * Run the accessor on the specified model attribute value
+     *
+     * @return mixed
+     */
+    public function __invoke($key, $model, Closure $next) {
+        return $next();
+    }
+}

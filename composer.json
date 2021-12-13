@@ -1,0 +1,51 @@
+{
+    "name": "artificertech/eloquent-attribute-middleware",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/artificertech/eloquent-attribute-middleware",
+    "keywords": [
+        "Laravel",
+        "EloquentAttributeMiddleware"
+    ],
+    "require": {
+        "illuminate/support": "~7|~8",
+        "php": "^8.0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "^6.23",
+        "illuminate/database": "^8.75"
+    },
+    "autoload": {
+        "psr-4": {
+            "Artificertech\\EloquentAttributeMiddleware\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Artificertech\\EloquentAttributeMiddleware\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": [
+            "./vendor/bin/phpunit"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Artificertech\\EloquentAttributeMiddleware\\EloquentAttributeMiddlewareServiceProvider"
+            ],
+            "aliases": {
+                "EloquentAttributeMiddleware": "Artificertech\\EloquentAttributeMiddleware\\Facades\\EloquentAttributeMiddleware"
+            }
+        }
+    }
+}
