@@ -9,7 +9,6 @@ use Artificertech\EloquentAttributeMiddleware\Tests\Mutators\AppendTestString as
 use Artificertech\EloquentAttributeMiddleware\Tests\Mutators\Upper as UpperMutator;
 use Illuminate\Database\Eloquent\Model;
 
-
 class User extends Model
 {
     use HasAttributeMiddleware;
@@ -23,9 +22,8 @@ class User extends Model
     ];
 
     /**
-     * Accessors
+     * Accessors.
      */
-
     public function getNameAttribute($value)
     {
         return $value;
@@ -58,9 +56,8 @@ class User extends Model
     }
 
     /**
-     * MUTATORS
+     * MUTATORS.
      */
-
     #[UpperMutator]
     public function setUpperNameAttribute($value)
     {
