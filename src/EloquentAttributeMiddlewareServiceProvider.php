@@ -31,7 +31,7 @@ class EloquentAttributeMiddlewareServiceProvider extends ServiceProvider
         // Registering package commands.
         $this->commands([
             AccessorMakeCommand::class,
-            MutatorMakeCommand::class
+            MutatorMakeCommand::class,
         ]);
     }
 }
