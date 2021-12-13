@@ -265,7 +265,7 @@ class User extends Model
 
 $user = new User;
 
-$user->name = 'Cole   Shirley'
+$user->name = 'Cole   Shirley'; // stored as 'cole shirley'
 ```
 
 Execution order:
@@ -275,6 +275,54 @@ Execution order:
 1. the setNameAttribute is called with the value 'cole shirley'
 1. if the setNameAttribute has a return value it is passed back to the implementation
 
+## Practical example: Caching model info from api
+
+For most situations you should be able to use normal accessor and mutator functionality. However if you find yourself setting up complicated accessors or mutators repeatedly you may consider extracting that functionality into accessor and mutator middleware. A great example is if you want to cache data related to a model from an external api
+
+``` php
+namespace App\Mutators;
+
+use Artificertech\EloquentAttributeMiddleware\Mutators\Mutator;
+use Attribute;
+use Closure;
+
+#[Attribute(Attribute::TARGET_METHOD)]
+class Cached extends Mutator
+{
+    /**
+     * Check the cache for the attribute 
+     * 
+     * @param $key the attribute name
+     * @param $model the model this attribute is being set for
+     * @param $next the next middleware function to call
+     * @return mixed
+     */
+    public function __invoke($key, $model, Closure $next)
+    {
+        return Cache::rememberForever($model::class . ":{$model->getKey()}:{$key}", function () use ($value, $next) {
+            return $next();
+        });
+    }
+}
+
+...
+namespace App\Models;
+
+use App\Mutators\Cached;
+use Artificertech\EloquentAttributeMiddleware\Models\Concerns\HasAttributeMiddleware;
+...
+class User extends Model
+{
+    use HasAttributeMiddleware;
+    ...
+
+    #[Cached]
+    public function getApiDataAttribute()
+    {
+        return Http::get('https://example.com/api/users/', ['name' => $this->name]);
+    }
+}
+```
 
 ## Change log
 
