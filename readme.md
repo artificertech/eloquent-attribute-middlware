@@ -306,7 +306,7 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/artificertech/eloquent-attribute-middleware.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/artificertech/eloquent-attribute-middleware.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/artificertech/eloquent-attribute-middleware/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-styleci]: https://styleci.io/repos/437927180/shield
 
 [link-packagist]: https://packagist.org/packages/artificertech/eloquent-attribute-middleware
 [link-downloads]: https://packagist.org/packages/artificertech/eloquent-attribute-middleware
